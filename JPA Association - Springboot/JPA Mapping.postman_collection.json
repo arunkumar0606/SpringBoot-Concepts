@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "4fb8efcc-be20-49dc-b512-d0875f45a4a2",
+		"name": "JPA Mapping",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33957944"
+	},
+	"item": [
+		{
+			"name": "OneToOne",
+			"item": [
+				{
+					"name": "Add customers",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"empID\":22,\r\n        \"name\":\"Arun\",\r\n        \"email\":\"arun@gamil.com\",\r\n        \"address\":\r\n            {\r\n                \"city\":\"cheennai\",\r\n                \"country\":\"india\"\r\n            }\r\n        \r\n\r\n        \r\n    },\r\n    {\r\n        \"empID\":43,\r\n        \"name\":\"ammu\",\r\n        \"email\":\"ammu@gamil.com\",\r\n        \"address\":\r\n            {\r\n                \"city\":\"banglore\",\r\n                \"country\":\"india\"\r\n            }\r\n        \r\n    }\r\n]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/addEmployees",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"addEmployees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Address",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"city\":\"pollachi\",\r\n        \"country\":\"india\",\r\n        \"employee\":{\r\n            \"empID\":43,\r\n            \"name\":\"bino\",\r\n            \"email\":\"bino@gamil.com\"\r\n        }\r\n    },\r\n    {\r\n        \"city\":\"marhtahalli\",\r\n        \"country\":\"india\",\r\n        \"employee\":{\r\n            \"empID\":93,\r\n            \"name\":\"barath\",\r\n            \"email\":\"barath@gamil.com\"\r\n        }\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/addAddress",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"addAddress"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OneToMany",
+			"item": [
+				{
+					"name": "Add customers",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n    \"customerId\":12,\r\n    \"name\":\"arun\",\r\n    \"location\":\"india\",\r\n    \"orders\":[\r\n        {\r\n            \"ordersId\":233489,\r\n            \"product\":\"Phone\"\r\n        },\r\n        {\r\n            \"ordersId\":22434,\r\n            \"product\":\"fan\"\r\n        }\r\n        \r\n    ]\r\n    }\r\n\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/addCustomer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"addCustomer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add orders",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n        {\r\n            \"ordersId\":233489,\r\n            \"product\":\"Phone\",\r\n            \"customer\":{\r\n                \"customerId\":22,\r\n                \"name\":\"arun\",\r\n                \"location\":\"india\"\r\n            }\r\n        },\r\n        {\r\n            \"ordersId\":22434,\r\n            \"product\":\"fan\",\r\n            \"customer\":{\r\n                \"customerId\":22,\r\n                \"name\":\"arun\",\r\n                \"location\":\"india\"\r\n            }\r\n        }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/addOrders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"addOrders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ManyToMany",
+			"item": [
+				{
+					"name": "Add Students",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"studentId\":32,\r\n        \"name\":\"arun\",\r\n        \"courses\":[\r\n            {\r\n                \"courseId\":112,\r\n                \"courseName\":\"springboot\"\r\n            },\r\n            {\r\n                \"courseId\":113,\r\n                \"courseName\":\"Java\"\r\n            }\r\n        ]\r\n    },\r\n     {\r\n        \"studentId\":33,\r\n        \"name\":\"ammu\",\r\n        \"courses\":[\r\n            {\r\n                \"courseId\":212,\r\n                \"courseName\":\"siebel\"\r\n            },\r\n            {\r\n                \"courseId\":213,\r\n                \"courseName\":\"orm\"\r\n            }\r\n        ]\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/addStudent",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"addStudent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Courses",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"courseId\":213,\r\n        \"courseName\":\"java\",\r\n        \"students\":[\r\n            {\r\n                \"studentId\":31,\r\n                \"name\":\"ARUN\"\r\n            }\r\n            ,\r\n            {\r\n                \"studentId\":33,\r\n                \"name\":\"ammu\"\r\n            }\r\n        ]\r\n    },\r\n     {\r\n        \"courseId\":212,\r\n        \"courseName\":\"SQL\",\r\n        \"students\":[\r\n            {\r\n                \"studentId\":31,\r\n                \"name\":\"ARUN\"\r\n            }\r\n            ,\r\n            {\r\n                \"studentId\":33,\r\n                \"name\":\"ammu\"\r\n            }\r\n        ]\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/addCourse",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"addCourse"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
