@@ -8,6 +8,7 @@ public class OneToManyApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(OneToManyApplication.class, args);
+		System.out.print("App Started");
 	}
 
 }
