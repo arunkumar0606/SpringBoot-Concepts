@@ -1,0 +1,218 @@
+{
+	"info": {
+		"_postman_id": "c2c1589f-9a0e-4852-bd36-b1d63cd74150",
+		"name": "REST API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33957944"
+	},
+	"item": [
+		{
+			"name": "Query REST",
+			"item": [
+				{
+					"name": "Get by query",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/getEmployeesByQuery",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"getEmployeesByQuery"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add by query",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/addEmployeesByQuery/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"addEmployeesByQuery",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update by query",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/updateEmployeeByQuery/234/ARUN@GMAIL.COM",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"updateEmployeeByQuery",
+								"234",
+								"ARUN@GMAIL.COM"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Del by query",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/deleteEmployeeByQuery",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deleteEmployeeByQuery"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "add all",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"empNo\":234,\r\n        \"empName\":\"Arun\",\r\n        \"empEmail\":\"arun@gamil.com\",\r\n        \"emapAge\":22\r\n    },\r\n     {\r\n        \"empNo\":11,\r\n        \"empName\":\"ammu\",\r\n        \"empEmail\":\"ammmu@gamil.com\",\r\n        \"emapAge\":22\r\n    }\r\n\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/addEmployees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"addEmployees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/getEmployees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getEmployees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/getEmployee/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getEmployee",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update employee",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"empNo\": 11,\r\n        \"empName\": \"ammu\",\r\n        \"empEmail\": \"ammmu@gamil.com\",\r\n        \"empAge\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/updateEmployee/111",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"updateEmployee",
+						"111"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "del employee",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/deleteEmployee/111",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deleteEmployee",
+						"111"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Http Code test",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
